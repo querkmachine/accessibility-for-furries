@@ -1,35 +1,42 @@
 :root {
-  --font-serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
-  --font-sans: ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa,
-    Manjari, "Arial Rounded MT Bold", Calibri, source-sans-pro, sans-serif;
-  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
-    "DejaVu Sans Mono", monospace;
-  --page-background-color: #eee;
-  --page-text-color: #202020;
-  --a11y-focus-background-color: #fc0;
-  --a11y-focus-text-color: #000;
+	--font-heading: ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa,
+		Manjari, "Arial Rounded MT Bold", Calibri, source-sans-pro, sans-serif;
+	--font-body: system-ui, sans-serif;
+	--font-code: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+		"DejaVu Sans Mono", monospace;
+	--page-background-color: #dcdcdc;
+	--page-text-color: #202020;
+	--accent-color: #786999;
+	--speech-background-color: #fff;
+	--speech-text-color: var(--page-text-color);
+	--a11y-focus-background-color: #fc0;
+	--a11y-focus-text-color: #000;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 *::before,
 *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 html {
-  background-color: var(--page-background-color);
-  color: var(--page-text-color);
-  text-size-adjust: 100%;
+	background-color: var(--page-background-color);
+	color: var(--page-text-color);
+	font-size: 125%;
+	text-size-adjust: 100%;
 }
 
 body {
-  min-block-size: 100vh;
-  margin: 0;
-  font-family: var(--font-sans);
-  font-size: clamp(18px, 1.5vw, 24px);
+	min-block-size: 100vh;
+	margin: 0;
+	font-family: var(--font-body);
+}
+
+p {
+	margin-block-start: 0;
 }
 
 /**
@@ -37,8 +44,8 @@ body {
  */
 
 .fab-container {
-  max-inline-size: 60rem;
-  margin-inline: auto;
+	max-inline-size: 60rem;
+	margin-inline: auto;
 }
 
 /**
@@ -46,16 +53,75 @@ body {
  */
 
 .fab-skiplink {
-  display: block;
-  padding: 0.5rem;
-  position: absolute;
-  inset-inline-start: -9999em;
-  inset-block-start: -9999em;
-  color: var(--a11y-focus-text-color);
-  background-color: var(--a11y-focus-background-color);
-  text-align: center;
+	display: block;
+	padding: 0.5rem;
+	position: absolute;
+	inset-inline-start: -9999em;
+	inset-block-start: -9999em;
+	color: var(--a11y-focus-text-color);
+	background-color: var(--a11y-focus-background-color);
+	text-align: center;
 }
 
 .fab-skiplink:focus {
-  position: static;
+	position: static;
+}
+
+/** 
+ * Component: Character callout
+ */
+
+.fab-character {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin: 0;
+}
+
+.fab-character__image {
+	flex: 4rem 0 0;
+}
+
+.fab-character__content {
+	margin: 0;
+	padding: 1rem;
+	position: relative;
+	background-color: var(--speech-background-color);
+	box-shadow: 0.5rem 0.5rem 0 0 var(--speech-text-color);
+}
+
+.fab-character__content::before {
+	content: "";
+	inline-size: 1rem;
+	block-size: 1rem;
+	position: absolute;
+	inset-inline-start: 1rem;
+	inset-block-start: -0.5rem;
+	background-color: var(--speech-background-color);
+	transform: rotate(45deg);
+}
+
+.fab-character__name {
+	font-weight: bold;
+}
+
+.fab-character__link {
+}
+
+@media (min-width: 30rem) {
+	.fab-character {
+		flex-direction: row;
+	}
+
+	.fab-character__content::before {
+		inset-inline-start: -0.5rem;
+		inset-block-start: 1rem;
+	}
+}
+
+/**
+ * Component: Header
+ */
+
+.fab-header {
 }

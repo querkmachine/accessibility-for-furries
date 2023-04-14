@@ -1,3 +1,4 @@
 module.exports = {
-  draft: true,
+	draft: true,
+	date: "9999-01-01",
 };

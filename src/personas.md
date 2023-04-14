@@ -1,7 +1,9 @@
 ---
-title: Our personas
+title: Our fursonas
 layout: generic
 ---
+
+definition of personas here, except this is for furries, so here's my fursonas, badum titsch
 
 ## Emy
 
@@ -9,6 +11,12 @@ layout: generic
 - Tends to take things a little logically / at face value. (Autism expy)
 - Sensors can malfunction sometimes (hearing loss, blindness)
 - Uses: lots of assistive tech
+
+{% character "emy" %}
+Whoa hey hello beep boop
+
+bweep
+{% endcharacter %}
 
 ## Olive
 
