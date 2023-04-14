@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-GB" dir="ltr">
+<head>
+	{#- Technical metadata #}
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="generator" content="Eleventy">
+	
+	{#- Page title #}
+	<title>{%- if title %}{{ title }} &mdash; {% endif %}{{ site.name }}</title>
+	
+	{# Stylesheets #}
+	<link rel="stylesheet" href="{{ '/styles/stylesheet.css' | url }}">
+	
+	{#- Content metadata #}
+	<link rel="canonical" href="{{ site.domain }}{{ page.url }}">
+	{% if noRobots -%}
+		<meta name="robots" content="noindex, nofollow">
+	{%- endif %}
+	
+	{#- Page-specific stuff #}
+	{% block head %}{% endblock %}
+</head>
+<body>
+	{%- block beforeHeader %}
+		<a class="fab-skiplink" href="#content">Skip to content</a>
+		<a class="fab-skiplink" href="#navigation">Skip to navigation</a>
+	{%- endblock %}
+	
+	{%- block header %}
+		<header>
+			<div class="fab-container">
+				<a href="{{ '/' | url }}">{{ site.name }}</a>
+			</div>
+		</header>
+		<nav id="navigation">
+		</nav>
+	{%- endblock %}
+	
+	{%- block afterHeader %}
+	{%- endblock %}
+	
+	<main id="content">
+		{%- block main %}
+		{%- endblock %}
+	</main>
+	
+	{%- block beforeFooter %}
+	{%- endblock %}
+	
+	{%- block footer %}
+	{%- endblock %}
+	
+	{%- block afterFooter %}
+	{%- endblock %}
+	
+	{%- block scripts %}
+	{%- endblock %}
+</body>
+</html>

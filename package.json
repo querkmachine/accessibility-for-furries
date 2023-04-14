@@ -1,0 +1,26 @@
+{
+  "name": "furry-accessibility-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run serve",
+    "clean": "rm -rf _site",
+    "serve": "npm run clean && ENVIRONMENT=dev npx @11ty/eleventy --serve",
+    "build": "npm run clean && ENVIRONMENT=prod npx @11ty/eleventy"
+  },
+  "author": "beeps <hi@berly.kim>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/querkmachine/accessibility-for-furries.git"
+  },
+  "bugs": {
+    "url": "https://github.com/querkmachine/accessibility-for-furries/issues"
+  },
+  "homepage": "https://github.com/querkmachine/accessibility-for-furries",
+  "browserslist": "last 2 versions and last 2 years and not dead",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

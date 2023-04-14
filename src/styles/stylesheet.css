@@ -1,0 +1,61 @@
+:root {
+  --font-serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  --font-sans: ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa,
+    Manjari, "Arial Rounded MT Bold", Calibri, source-sans-pro, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "DejaVu Sans Mono", monospace;
+  --page-background-color: #eee;
+  --page-text-color: #202020;
+  --a11y-focus-background-color: #fc0;
+  --a11y-focus-text-color: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  background-color: var(--page-background-color);
+  color: var(--page-text-color);
+  text-size-adjust: 100%;
+}
+
+body {
+  min-block-size: 100vh;
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: clamp(18px, 1.5vw, 24px);
+}
+
+/**
+ * Object: Container
+ */
+
+.fab-container {
+  max-inline-size: 60rem;
+  margin-inline: auto;
+}
+
+/**
+ * Object: Skiplink
+ */
+
+.fab-skiplink {
+  display: block;
+  padding: 0.5rem;
+  position: absolute;
+  inset-inline-start: -9999em;
+  inset-block-start: -9999em;
+  color: var(--a11y-focus-text-color);
+  background-color: var(--a11y-focus-background-color);
+  text-align: center;
+}
+
+.fab-skiplink:focus {
+  position: static;
+}
